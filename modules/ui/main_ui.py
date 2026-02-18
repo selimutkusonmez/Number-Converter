@@ -150,5 +150,8 @@ class MainUI(QMainWindow):
 
     def convert_button_function(self):
         output_1,output_2,output_3 = converter(self.input_1_label.currentText(),self.input_1.text())
+        self.output_1.setText(output_1)
+        self.output_2.setText(output_2)
+        self.output_3.setText(output_3)
 
-        
+        self.statusBar().showMessage("Number converted")

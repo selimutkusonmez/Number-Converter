@@ -1,6 +1,13 @@
 def converter(input_type,input):
-
-    output_1 = 0
-    output_2 = 0
-    output_3 = 0
-    return output_1,output_2,output_3
+    if input_type == "Binary":
+        decimal_value = int(input,2)
+        return str(decimal_value),format(decimal_value, 'o'),format(decimal_value, 'X')
+    elif input_type == "Decimal":
+        decimal_value = int(input,10)
+        return format(decimal_value, 'b'),format(decimal_value, 'o'),format(decimal_value, 'X')
+    elif input_type == "Octal":
+        decimal_value = int(input,8)
+        return format(decimal_value, 'b'),str(decimal_value),format(decimal_value, 'X')
+    elif input_type == "Hex":
+        decimal_value = int(input,16)
+        return format(decimal_value, 'b'),str(decimal_value),format(decimal_value, 'o')

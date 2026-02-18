@@ -12,7 +12,7 @@ def label_replacer(current_text):
     
     elif current_text == "Decimal":
         regex = QRegularExpressionValidator(QRegularExpression("[0-9]+"))
-        return "Binary","Hex","Octal",regex
+        return "Binary","Octal","Hex",regex
     
     elif current_text == "Hex":
         regex = QRegularExpressionValidator(QRegularExpression("[0-9A-F]+"))

@@ -2,7 +2,7 @@
 
 A modern desktop application built with **Python** and **PyQt6** to convert numbers between Binary, Decimal, Hexadecimal, and Octal formats instantly.
 
-![App Screenshot](assets/screenshot.png)
+![App Screenshot](modules/assets/screenshot.png)
 
 ## 📖 About The Project
 

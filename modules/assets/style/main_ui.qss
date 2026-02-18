@@ -1,0 +1,56 @@
+QMainWindow {
+    background-color: #f0f2f5; 
+}
+
+/* Header */
+#main_label{
+    color: #2c3e50;
+    font-family: 'Segoe UI', sans-serif;
+    font-size : 20px;
+    font-weight : bold;
+}
+
+/* grpoupbox */
+QGroupBox[class=groupbox]{
+    background-color: white;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* input */
+#input:focus {
+    border: 2px solid #3498db;
+    background-color: white;
+}
+
+/* Conver button */
+QPushButton:hover {
+    background-color: #d2d2d2;
+}
+
+QPushButton:pressed {
+    background-color: #ff969696;
+}
+
+/* Labels */
+QLabel[class=label] {
+    color: #555;
+    font-weight: bold;
+    font-size : 15px;
+    margin-bottom: 2px;
+}
+
+/* Outputs */
+QLineEdit[class=output]{
+    background-color: #fafafa;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 8px;
+    font-family: 'Consolas', monospace;
+    font-size: 14px;
+    color: #2c3e50;
+}
+

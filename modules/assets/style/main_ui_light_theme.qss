@@ -1,3 +1,4 @@
+/* Main Window Background */
 QMainWindow {
     background-color: #f0f2f5; 
 }
@@ -20,19 +21,44 @@ QGroupBox[class=groupbox]{
     color: #333;
 }
 
-/* input */
+/* Input */
+
+QLineEdit {
+    background-color: white;
+    color: #333333;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #3498db;
+    background-color: #ffffff;
+}
+
 #input:focus {
     border: 2px solid #3498db;
     background-color: white;
 }
 
-/* Conver button */
+/* Convert button */
+
+QPushButton {
+    background-color: white;
+    color: #333333;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    padding: 6px;
+    font-weight: bold;
+}
+
 QPushButton:hover {
-    background-color: #d2d2d2;
+    background-color: #f0f0f0;
+    border: 1px solid #bbbbbb;
 }
 
 QPushButton:pressed {
-    background-color: #ff969696;
+    background-color: #e0e0e0;
 }
 
 /* Labels */

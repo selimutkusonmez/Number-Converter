@@ -6,12 +6,15 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtGui import QIcon,QPixmap,QIntValidator,QDoubleValidator,QRegularExpressionValidator,QKeyEvent,QPainter,QFontDatabase,QFont,QAction,QActionGroup
 
 from modules.assets.style.style_reader import read_style
+from modules.logic.converter import converter
+from modules.logic.label_replacer import label_replacer
 
 class MainUI(QMainWindow):
     def __init__(self):
         super().__init__()
         self.init_ui()
         self.light_theme_action_function()
+        self.input_1_label_currenttext_changed()
     
     def init_ui(self):
 
@@ -40,7 +43,8 @@ class MainUI(QMainWindow):
 
         self.input_1_label = QComboBox()
         self.input_1_label.setFixedWidth(100)
-        self.input_1_label.addItems(["Binary","Decimal","Hexadecimal","Octal"])
+        self.input_1_label.addItems(["Binary","Decimal","Octal","Hex"])
+        self.input_1_label.currentTextChanged.connect(self.input_1_label_currenttext_changed)
         self.upper_groupbox_layout.addWidget(self.input_1_label)
 
         self.input_1 = QLineEdit()
@@ -49,6 +53,7 @@ class MainUI(QMainWindow):
         self.upper_groupbox_layout.addWidget(self.input_1,3)
 
         self.convert_button = QPushButton("Convert")
+        self.convert_button.clicked.connect(self.convert_button_function)
         self.upper_groupbox_layout.addWidget(self.convert_button,1)
 
         #Lower Groupbox
@@ -130,5 +135,20 @@ class MainUI(QMainWindow):
 
     def light_theme_action_function(self):
         self.setStyleSheet(read_style("main_ui_light_theme.qss"))
+
+    def input_1_label_currenttext_changed(self):
+        label_1,label_2,label_3,regex = label_replacer(self.input_1_label.currentText())
+        self.input_1.setValidator(regex)
+        self.output_1_label.setText(label_1)
+        self.output_2_label.setText(label_2)
+        self.output_3_label.setText(label_3)
+        self.input_1.setText("")
+        self.output_1.setText("")
+        self.output_2.setText("")
+        self.output_3.setText("")
+        self.statusBar().showMessage(self.input_1_label.currentText())
+
+    def convert_button_function(self):
+        output_1,output_2,output_3 = converter(self.input_1_label.currentText(),self.input_1.text())
 
         

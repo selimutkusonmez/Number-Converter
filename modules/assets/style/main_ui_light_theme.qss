@@ -80,3 +80,16 @@ QLineEdit[class=output]{
     color: #2c3e50;
 }
 
+/* Status Bar Body */
+QStatusBar {
+    background-color: #f0f2f5;
+    color: #555555;
+    border-top: 1px solid #dcdcdc;
+}
+
+/* Status Bar Text */
+QStatusBar::item {
+    border: none;
+    color : black;
+}
+

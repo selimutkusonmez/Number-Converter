@@ -8,6 +8,7 @@ from PyQt6.QtGui import QIcon,QPixmap,QIntValidator,QDoubleValidator,QRegularExp
 from modules.assets.style.style_reader import read_style
 from modules.logic.converter import converter
 from modules.logic.label_replacer import label_replacer
+from config import JPG_PATH
 
 class MainUI(QMainWindow):
     def __init__(self):
@@ -17,6 +18,8 @@ class MainUI(QMainWindow):
         self.input_1_label_currenttext_changed()
     
     def init_ui(self):
+
+        self.setWindowIcon(QIcon(JPG_PATH))
 
         self.setWindowTitle("Binary Converter")
         self.setFixedSize(500,300)
